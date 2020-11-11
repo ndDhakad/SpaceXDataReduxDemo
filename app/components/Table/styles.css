@@ -1,0 +1,88 @@
+.tableStyle {
+  min-width: 100em;
+  margin: auto;
+  margin-bottom: 1%;
+}
+
+.tableStyle td{
+  padding: 0.25em;
+  vertical-align: middle;
+}
+
+.tableStyle2 {
+  width: 100em;
+  margin: auto;
+}
+.row{
+  margin: 0;
+  min-width:100em;
+}
+./*dropdown-menu {
+  bottom: 30px;
+  top:unset;
+  min-width: 4rem;
+  padding: 0.5rem;
+
+}
+
+
+.dropdown-toggle{
+  !*background-color: #0000a0!important;*!
+  !*border-color: #fff!important;*!
+  background-color: rgba(0, 0, 0, .06)!important;
+  border-color: rgba(0, 0, 0, .06)!important;
+  color:#000!important;
+  !*margin-top: 2%;*!
+
+}
+
+.dropdown-item:hover{
+  !*background-color: #0000a0!important;*!
+  !*color: #fff;*!
+  background-color: rgba(0, 0, 0, .06)!important;
+  color: #000;
+
+}
+
+.react-bootstrap-table-pagination-total{
+  !*color: #0000a0!important;*!
+  !*margin: 2%;*!
+
+
+}
+
+ul.react-bootstrap-table-page-btns-ul li a{
+  padding: 10px;
+  background-color: rgba(0, 0, 0, .06)!important;
+  color:#000!important;
+}*/
+
+.filter {
+  padding: 2px;
+  font-size: 12px;
+  font-family: 'MarsCentra-Book';
+}
+
+.tableStyle tbody {
+  display:block;
+  /*height:400px;*/
+  overflow-y:scroll;
+}
+.tableStyle thead{
+  display:table;
+  width: 100%;
+  /*width:98.7%;*/
+  table-layout:fixed;
+}
+.tableStyle tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}
+/*
+thead label{
+  width: 100%;
+}*/
+.expand-cell{
+  text-align: center;
+}
