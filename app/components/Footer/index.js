@@ -9,17 +9,12 @@ import messages from './messages';
 function Footer() {
   return (
     <Wrapper>
-      <section>
-        <FormattedMessage {...messages.licenseMessage} />
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
+
       <section>
         <FormattedMessage
           {...messages.authorMessage}
           values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
+            author: <A href="https://www.linkedin.com/in/namita-dhakad-24985bb1/">Namita Dhakad</A>,
           }}
         />
       </section>

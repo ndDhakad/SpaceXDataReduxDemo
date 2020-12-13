@@ -34,6 +34,7 @@ import {launchProjectsFetch, updateFilter} from "./actions";
 import CallFailedAlert from "../../components/CallFailedAlert";
 import LaunchProjectCards from "../../components/LaunchProjectCards";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 
 
 export function LaunchHomePage({onLoadLaunchProjects, launchProjects, launchSpinner, launchFail, onUpdateFilter}) {
@@ -78,6 +79,14 @@ export function LaunchHomePage({onLoadLaunchProjects, launchProjects, launchSpin
     const handleChangeLanding = (event) => {
         setLandingSuccess(event.target.value);
         onUpdateFilter("landing",event.target.value);
+        onLoadLaunchProjects();
+    };
+
+    const onClickResetHandler = () => {
+        setYear(null);
+        setLaunchSuccess(null);
+        setLandingSuccess(null);
+        onUpdateFilter("reset",null);
         onLoadLaunchProjects();
     };
 
@@ -127,6 +136,11 @@ export function LaunchHomePage({onLoadLaunchProjects, launchProjects, launchSpin
                                     <FormControlLabel value="false" control={<Radio />} label="False" />
                                 </RadioGroup>
                             </FormControl>
+                        </Grid>
+                        <Grid style={{alignItems:"center", padding: 20}}>
+                            <Button variant="contained" color="primary" onClick={onClickResetHandler}>
+                                Reset All
+                            </Button>
                         </Grid>
                     </Paper>
                 </Grid>
