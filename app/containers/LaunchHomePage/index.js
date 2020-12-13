@@ -36,15 +36,6 @@ export function LaunchHomePage({onLoadLaunchProjects, launchProjects, launchSpin
         onLoadLaunchProjects();
     }, []);
 
-    const data = [
-        {label: "abc", value: "abc"},
-        {label: "def", value: "def"},
-        {label: "ghi", value: "ghi"},
-        {label: "jkl", value: "jkl"},
-        {label: "mno", value: "mno"},
-        {label: "pqr", value: "pqr"},
-    ];
-
     return (
         <div>
             <Helmet>
