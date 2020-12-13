@@ -23,23 +23,23 @@ function LaunchProjectCards({project}) {
               height="240"
               image={project.links.mission_patch}
               title={project.mission_name}
-              style={{contain: "size"}}
+              style={{contain: "size", backgroundColor: "lightgray"}}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5" component="h2" style={{color: "blue"}}>
               {project.mission_name} #{project.flight_number}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b>Mission Ids:</b> {project.mission_id.join(',')}
+              <b style={{color: "black"}}>Mission Ids:</b> {project.mission_id.join(',')}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b>Launch Year:</b> {project.launch_year}
+              <b style={{color: "black"}}>Launch Year:</b> {project.launch_year}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b>Successful Launch:</b> {project.launch_success.toString()}
+              <b style={{color: "black"}}>Successful Launch:</b> {project.launch_success.toString()}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b>Successful Landing:</b> {project.launch_success}
+              <b style={{color: "black"}}>Successful Landing:</b> {project.launch_success}
             </Typography>
           </CardContent>
         </CardActionArea>
