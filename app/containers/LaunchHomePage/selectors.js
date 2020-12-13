@@ -40,5 +40,23 @@ const makeSelectSpinnerState = () =>
     substate => substate.launchSpinner
   );
 
+const makeSelectLaunchSuccess = () =>
+  createSelector(
+    selectLaunchHomePageDomain,
+    substate => substate.launchSuccess
+  );
+
+const makeSelectLandingSuccess = () =>
+  createSelector(
+    selectLaunchHomePageDomain,
+    substate => substate.landingSuccess
+  );
+
+const makeSelectYear = () =>
+  createSelector(
+    selectLaunchHomePageDomain,
+    substate => substate.selectedYear
+  );
+
 export default makeSelectLaunchHomePage;
-export { selectLaunchHomePageDomain, makeSelectLaunchProjects, makeSelectSpinnerState, makeSelectLaunchProjectsFail };
+export { selectLaunchHomePageDomain, makeSelectLaunchProjects, makeSelectSpinnerState, makeSelectLaunchProjectsFail, makeSelectLaunchSuccess, makeSelectLandingSuccess, makeSelectYear };

@@ -8,13 +8,16 @@ import {
     DEFAULT_ACTION,
     LAUNCH_PROJECT_FETCH,
     LAUNCH_PROJECT_FETCH_FAIL,
-    LAUNCH_PROJECT_FETCH_SUCCESS, SET_SPINNER_STATE
+    LAUNCH_PROJECT_FETCH_SUCCESS, SET_SPINNER_STATE, UPDATE_FILTER
 } from "./constants";
 
 export const initialState = {
-    launchProjects: null,
+    launchProjects: [],
     launchFail:false,
     launchSpinner: false,
+    selectedYear: null,
+    launchSuccess: null,
+    landingSuccess:null,
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -42,6 +45,15 @@ const launchHomePageReducer = (state = initialState, action) =>
               console.log(e);
           }
 
+        break;
+      case UPDATE_FILTER:
+          debugger;
+          if(action.fieldName === "year" )
+              draft.selectedYear = action.value;
+          else if(action.fieldName === "launch" )
+              draft.launchSuccess = action.value;
+          else if(action.fieldName === "landing" )
+              draft.landingSuccess = action.value;
         break;
     }
   });

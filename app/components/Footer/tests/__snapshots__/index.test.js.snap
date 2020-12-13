@@ -34,7 +34,7 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
   <section>
     <span>
       
-      Made with love by 
+      Developed by
       <a
         className="A-br8h0y-0 dwVNvo"
         href="https://twitter.com/mxstbr"

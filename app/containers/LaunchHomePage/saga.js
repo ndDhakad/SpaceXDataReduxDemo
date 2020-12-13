@@ -2,6 +2,7 @@
  import {LAUNCH_PROJECT_FETCH} from "./constants";
  import {launchProjectsFetch, launchProjectsFetchSuccess, launchProjectsFetchFail, setSpinnerState} from "./actions";
  import request from "../../utils/request";
+ import {makeSelectLandingSuccess, makeSelectLaunchSuccess, makeSelectYear} from "./selectors";
 
 
  let counterFetchLaunchProjects = 0;
@@ -12,9 +13,21 @@
  // All: https://api.spaceXdata.com/v3/launches?limit=100&launch_success=true&land_success=true&launch_year=2014
 
 export function *launchProjectsFetchSaga(){
+    const selectedYear = yield select(makeSelectYear());
+    const launchSuccess = yield select(makeSelectLaunchSuccess());
+    const landingSuccess = yield select(makeSelectLandingSuccess());
 
     yield put(setSpinnerState(true));
-    const apiUrl = "https://api.spaceXdata.com/v3/launches?limit=100"; // data without filters
+    let apiUrl = "https://api.spaceXdata.com/v3/launches?limit=100"; // data without filters
+
+    if(selectedYear !== null )
+        apiUrl = apiUrl+`&launch_year=${selectedYear}`;
+    if(launchSuccess!== null)
+        apiUrl = apiUrl+`&launch_success=${launchSuccess}`;
+    if(landingSuccess!== null)
+        apiUrl = apiUrl+`&land_success=${landingSuccess}`;
+    console.log(apiUrl);
+
     try{
         const data = yield call(request, apiUrl);
         if (data !== null || data !== {}) {
@@ -34,7 +47,7 @@ export function *launchProjectsFetchSaga(){
             yield put(launchProjectsFetch());
         }
         yield put(setSpinnerState(false));
-    }
+        yield put(launchProjectsFetchFail(true));}
 }
 
 // Individual exports for testing

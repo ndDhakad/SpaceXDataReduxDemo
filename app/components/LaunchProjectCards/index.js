@@ -36,7 +36,7 @@ function LaunchProjectCards({project}) {
               <b>Launch Year:</b> {project.launch_year}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b>Successful Launch:</b> {project.launch_success}
+              <b>Successful Launch:</b> {project.launch_success.toString()}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               <b>Successful Landing:</b> {project.launch_success}

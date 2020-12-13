@@ -8,7 +8,7 @@ import {
   DEFAULT_ACTION,
   LAUNCH_PROJECT_FETCH,
   LAUNCH_PROJECT_FETCH_FAIL,
-  LAUNCH_PROJECT_FETCH_SUCCESS, SET_SPINNER_STATE
+  LAUNCH_PROJECT_FETCH_SUCCESS, SET_SPINNER_STATE, UPDATE_FILTER, UPDATE_YEAR
 } from "./constants";
 
 export function defaultAction() {
@@ -38,10 +38,17 @@ export function launchProjectsFetchFail(data) {
   };
 }
 
-
 export function setSpinnerState(data) {
   return {
     type: SET_SPINNER_STATE,
     data
   };
 }
+
+export function updateFilter(fieldName, value) {
+  return {
+    type: UPDATE_FILTER,
+    fieldName, value
+  };
+}
+
