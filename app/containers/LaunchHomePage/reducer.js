@@ -47,11 +47,10 @@ const launchHomePageReducer = (state = initialState, action) =>
 
         break;
       case UPDATE_FILTER:
-          debugger;
           if(action.fieldName === "reset" ){
               draft.selectedYear = action.value;
               draft.launchSuccess = action.value;
-              draft.launchSuccess = action.value;
+              draft.landingSuccess = action.value;
           }
           else if(action.fieldName === "year" )
               draft.selectedYear = action.value;

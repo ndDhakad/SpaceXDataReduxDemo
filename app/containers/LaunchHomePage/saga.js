@@ -17,8 +17,9 @@ export function *launchProjectsFetchSaga(){
     const launchSuccess = yield select(makeSelectLaunchSuccess());
     const landingSuccess = yield select(makeSelectLandingSuccess());
 
+
     yield put(setSpinnerState(true));
-    let apiUrl = "https://api.spaceXdata.com/v3/launches?limit=100"; // data without filters
+    let apiUrl = "https://api.spaceXdata.com/v3/launches?limit=3"; // data without filters
 
     if(selectedYear !== null )
         apiUrl = apiUrl+`&launch_year=${selectedYear}`;

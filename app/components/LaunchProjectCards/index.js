@@ -14,6 +14,10 @@ import Typography from "@material-ui/core/Typography";
 // import styled from 'styled-components';
 
 function LaunchProjectCards({project}) {
+  const getLandingSuccess = (value) => {
+    return value === null ? 'NA' : ''+value;
+  }
+
   return (
       <Card style={{height:450}}>
         <CardActionArea>
@@ -36,10 +40,10 @@ function LaunchProjectCards({project}) {
               <b style={{color: "black"}}>Launch Year:</b> {project.launch_year}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b style={{color: "black"}}>Successful Launch:</b> {project.launch_success.toString()}
+              <b style={{color: "black"}}>Successful Launch:</b> {""+project.launch_success}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <b style={{color: "black"}}>Successful Landing:</b> {project.launch_success}
+              <b style={{color: "black"}}>Successful Landing:</b> {getLandingSuccess(project.rocket.first_stage.cores[0].land_success)}
             </Typography>
           </CardContent>
         </CardActionArea>
